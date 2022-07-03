@@ -1,0 +1,69 @@
+{
+    "data": [
+        {
+            "account_category": "revenue",
+            "account_code": "200",
+            "account_currency": "AUD",
+            "account_identifier": "e2bacdc6-2006-43c2-a5da-3c0e5f43b452",
+            "account_status": "ACTIVE",
+            "value_type": "credit",
+            "account_name": "Sales",
+            "account_type": "sales",
+            "account_type_bank": "",
+            "system_account": "",
+            "total_value": 32431.0
+        },
+        {
+            "account_code": "400",
+            "account_currency": "AUD",
+            "account_identifier": "d392fe47-c99d-499e-a200-46709dd6b6e7",
+            "account_name": "Advertising",
+            "account_status": "ACTIVE",
+            "system_account": "",
+            "value_type": "debit",
+            "account_category": "expense",
+            "account_type_bank": "",
+            "total_value": 1830.18,
+            "account_type": "overheads"
+        },
+        {
+            "account_currency": "AUD",
+            "account_identifier": "959af5f4-9925-44e8-b283-7ddf4b427238",
+            "account_status": "ACTIVE",
+            "value_type": "debit",
+            "system_account": "",
+            "total_value": 31.5,
+            "account_category": "expense",
+            "account_code": "404",
+            "account_name": "Bank Fees",
+            "account_type": "overheads",
+            "account_type_bank": ""
+        },
+        {
+            "account_type_bank": "",
+            "value_type": "debit",
+            "total_value": 310.0,
+            "account_name": "Cleaning",
+            "account_type": "overheads",
+            "account_currency": "AUD",
+            "account_identifier": "ff09eac3-5b17-44fb-9eea-e2e9375e91b4",
+            "account_status": "ACTIVE",
+            "system_account": "",
+            "account_category": "expense",
+            "account_code": "408"
+        },
+        {
+            "account_status": "ACTIVE",
+            "system_account": "",
+            "total_value": 49.0,
+            "account_category": "expense",
+            "account_code": "412",
+            "account_currency": "AUD",
+            "account_identifier": "6db51cfa-0326-4e63-a743-c78c4d99aba4",
+            "account_name": "Consulting & Accounting",
+            "account_type": "overheads",
+            "account_type_bank": "",
+            "value_type": "debit"
+        }
+    ]
+}

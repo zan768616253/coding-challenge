@@ -35,9 +35,11 @@ func Main() {
 		return
 	}
 
-	var report calculator.Report
+	// Convert binary data to calculator.Report
+	var report calculator.ReportData
 	err = json.Unmarshal([]byte(data), &report)
 	if err != nil {
 		return
 	}
+
 }

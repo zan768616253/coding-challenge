@@ -1,6 +1,6 @@
 package calculator
 
-type Report struct {
+type ReportData struct {
 	Category       string   `json:"object_category"`
 	ConnectionId   string   `json:"connection_id"`
 	User           string   `json:"user"`
@@ -26,4 +26,24 @@ type Record struct {
 	AccountName       string  `json:"account_name"`
 	SystemAccount     string  `json:"system_account"`
 	TotalValue        float64 `json:"total_value"`
+}
+
+type RawData struct {
+	Revenue   float64
+	Expenses  float64
+	Profit    float64
+	Assets    float64
+	Liability float64
+}
+
+type AdvancedData struct {
+	GrossProfitMargin   float64
+	NetProfitMargin     float64
+	WorkingCapitalRatio float64
+}
+
+type Calculator struct {
+	Report       *ReportData
+	RawData      *RawData
+	AdvancedData *AdvancedData
 }
