@@ -1,5 +1,7 @@
 package calculator
 
+import "math"
+
 const (
 	Current                   = "current"
 	Bank                      = "bank"
@@ -52,5 +54,27 @@ func (c *Calculator) CalculateRawData() error {
 	rawData.Expenses = rawData.Expenses / 100
 	rawData.Assets = rawData.Assets / 100
 	c.RawData = rawData
+	return nil
+}
+
+// CalculateAdvancedData Calculator advanced data including profit and working capital ratio.
+func (c *Calculator) CalculateAdvancedData() error {
+	advancedData := &AdvancedData{}
+
+	rawData := c.RawData
+	if rawData.Revenue == 0 {
+		advancedData.GrossProfitMargin, advancedData.NetProfitMargin = 0, 0
+	} else {
+		advancedData.GrossProfitMargin = math.Round(rawData.Profit / rawData.Revenue * 100)
+		advancedData.NetProfitMargin = math.Round((rawData.Revenue - rawData.Expenses) / rawData.Revenue * 100)
+	}
+
+	if rawData.Liability == 0 {
+		advancedData.WorkingCapitalRatio = 0
+	} else {
+		advancedData.WorkingCapitalRatio = math.Round(rawData.Assets / rawData.Liability * 100)
+	}
+
+	c.AdvancedData = advancedData
 	return nil
 }
