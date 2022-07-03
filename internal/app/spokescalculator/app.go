@@ -36,10 +36,24 @@ func Main() {
 	}
 
 	// Convert binary data to calculator.Report
-	var report calculator.ReportData
+	var report *calculator.ReportData
 	err = json.Unmarshal([]byte(data), &report)
 	if err != nil {
 		return
 	}
-
+	cal := calculator.New(report)
+	err = cal.CalculateRawData()
+	if err != nil {
+		return
+	}
+	err = cal.CalculateAdvancedData()
+	if err != nil {
+		return
+	}
+	log.Printf("Revenue: $%.2f\n", cal.RawData.Revenue)
+	log.Printf("Expenses: $%.2f\n", cal.RawData.Expenses)
+	log.Printf("Profit: $%.2f\n", cal.RawData.Profit)
+	log.Printf("Gross Profit Margin: %.0f%%\n", cal.AdvancedData.GrossProfitMargin)
+	log.Printf("Net Profit Margin: %.0f%%\n", cal.AdvancedData.NetProfitMargin)
+	log.Printf("Working Capital Ratio: %.0f%%\n", cal.AdvancedData.WorkingCapitalRatio)
 }

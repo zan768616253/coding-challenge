@@ -53,6 +53,7 @@ func (c *Calculator) CalculateRawData() error {
 	rawData.Profit = rawData.Profit / 100
 	rawData.Expenses = rawData.Expenses / 100
 	rawData.Assets = rawData.Assets / 100
+	rawData.Liability = rawData.Liability / 100
 	c.RawData = rawData
 	return nil
 }
